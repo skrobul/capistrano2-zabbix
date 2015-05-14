@@ -68,4 +68,14 @@ describe ZabbixMaintenance do
       end
     end
   end
+
+  describe '.maint_id' do
+    context 'when maintenance exsts', :vcr do
+      it 'returns correct ID' do
+        new_id = zbx.create([2])
+        expect(zbx.maint_id).to eq(new_id)
+        zbx.delete
+      end
+    end
+  end
 end

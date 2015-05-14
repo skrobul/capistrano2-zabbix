@@ -16,6 +16,24 @@ class ZabbixMaintenance
     @id = nil
   end
 
+  def maint_id
+    ret = @zbx.query method: 'maintenance.get', params: {
+      'search': {
+        'name': @maint_title
+      }
+    }
+    begin
+      ret.first['maintenanceid'].to_i
+    rescue KeyError
+      nil
+    end
+  end
+
+  def create_or_replace(*args)
+    delete(maint_id) if exists?
+    create(*args)
+  end
+
   def create(groupids, period: 3600)
     maint_params = {
       name: @maint_title,
@@ -28,10 +46,10 @@ class ZabbixMaintenance
     @id = ret['maintenanceids'].first.to_i
   end
 
-  def delete
-    ret = @zbx.query method: 'maintenance.delete', params: [@id]
-    unless ret['maintenanceids'] == [@id]
-      fail "Maintenance id:#{@id} has not been deleted"
+  def delete(id: @id)
+    ret = @zbx.query method: 'maintenance.delete', params: [id]
+    unless ret['maintenanceids'] == [id]
+      fail "Maintenance id:#{id} has not been deleted"
     end
     true
   end
