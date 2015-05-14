@@ -12,6 +12,7 @@ Capistrano::Configuration.instance.load do
   set_default(:zabbix_password) { 'zabbix' }
   set_default(:zabbix_period) { 60 * 60 * 10 } # 10 hours
   set_default(:zabbix_groupid) { 2 }
+  set_default(:zabbix_auto_trigger) { true }
 
   namespace :zabbix do
     desc 'Create maintenance in Zabbix'
@@ -23,6 +24,11 @@ Capistrano::Configuration.instance.load do
     task :delete do
       zm_api.delete(id: zm_api.maint_id)
     end
+  end
+
+  if zabbix_auto_trigger
+    after 'deploy:setup',           'zabbix:create'
+    after 'deploy:restart',         'zabbix:delete'
   end
 
   def zm_api
