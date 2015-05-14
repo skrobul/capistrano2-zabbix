@@ -42,6 +42,23 @@ Then in your `config/deploy.rb` you need to require the gem:
   set :zabbix_auto_trigger, false
 ```
 
+## Usage
+As mentioned in 'Configuration' section you have at leasth three ways of using this
+gem:
+* automatically create maintenance before code deployment and delete it
+    afterwards. If this is what you want, set `:zabbix_auto_trigger` to
+    `true`.
+* modify your `deploy.rb` to invoke `zabbix:create` and/or `zabbix:delete`
+    tasks anytime you want. For example, if you want to create maintenance
+    only after code has been copied over to your severs you would want
+    something like this:
+
+    ```ruby
+    set :zabbix_auto_trigger, false         # This is default, can be skipped.
+    after 'deploy:update_code', 'zabbix:create'
+    ```
+
+
 ## Contributing to capistrano2-zabbix
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
