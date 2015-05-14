@@ -11,6 +11,7 @@ Capistrano::Configuration.instance.load do
   set_default(:zabbix_user) { 'Admin' }
   set_default(:zabbix_password) { 'zabbix' }
   set_default(:zabbix_period) { 60 * 60 * 10 } # 10 hours
+  set_default(:zabbix_groupid) { 2 }
 
   namespace :zabbix do
     desc 'Create maintenance in Zabbix'
@@ -20,12 +21,11 @@ Capistrano::Configuration.instance.load do
   end
 
   def create_maintenance
-    zbx = ZabbixMaintenance.new(zabbix_url,
+    zbx = ZabbixMaintenance.new("#{zabbix_url}/api_jsonrpc.php",
                                 zabbix_user,
-                                zabbix_password,
-                                period: zabbix_period)
+                                zabbix_password)
     set(:zbx_handle, zbx)
-    zbx.create
+    zbx.create [zabbix_groupid], period: zabbix_period
   end
 
   def delete_maintenance
