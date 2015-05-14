@@ -16,19 +16,19 @@ Capistrano::Configuration.instance.load do
   namespace :zabbix do
     desc 'Create maintenance in Zabbix'
     task :create do
-      create_maintenance
+      zm_api.create_or_replace [zabbix_groupid], period: zabbix_period
+    end
+
+    desc 'Delete maintenance in Zabbix'
+    task :delete do
+      zm_api.delete(id: zm_api.maint_id)
     end
   end
 
-  def create_maintenance
+  def zm_api
     zbx = ZabbixMaintenance.new("#{zabbix_url}/api_jsonrpc.php",
                                 zabbix_user,
                                 zabbix_password)
     set(:zbx_handle, zbx)
-    zbx.create_or_replace [zabbix_groupid], period: zabbix_period
-  end
-
-  def delete_maintenance
-    zbx_handle.delete
   end
 end
