@@ -18,7 +18,12 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/skrobul/capistrano2-zabbix"
   gem.license = "MIT"
   gem.summary = %Q{Create maintenances in Zabbix through Capistrano deployment}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{
+  Tired of manually creating maintenance objects in your Zabbix monitoring
+  system for every new release of your application ? This gem is for you! It
+  automates creation and removal of necessary objects so that your code can be
+  released without unnecessary false alerts.
+  }
   gem.email = "skrobul@skrobul.com"
   gem.authors = ["Marek Skrobacki"]
   # dependencies defined in Gemfile
