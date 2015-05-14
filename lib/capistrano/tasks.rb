@@ -12,7 +12,7 @@ Capistrano::Configuration.instance.load do
   set_default(:zabbix_password) { 'zabbix' }
   set_default(:zabbix_period) { 60 * 60 * 10 } # 10 hours
   set_default(:zabbix_groupid) { 2 }
-  set_default(:zabbix_auto_trigger) { true }
+  set_default(:zabbix_auto_trigger) { false }
 
   namespace :zabbix do
     desc 'Create maintenance in Zabbix'
