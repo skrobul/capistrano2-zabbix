@@ -152,4 +152,4 @@ DEPENDENCIES
   vcr (~> 2.9)
   webmock
   yard (~> 0.7)
-  zabbixapi (~> 2.2.0)
+  zabbixapi (~> 2.2)
