@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://192.168.56.2/zabbix/api_jsonrpc.php
+    body:
+      encoding: UTF-8
+      string: '{"method":"user.authenticate","params":{"user":"wronglogin","password":"wrongpw"},"auth":null,"id":47116,"jsonrpc":"2.0"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json-rpc
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 15 May 2015 15:55:36 GMT
+      Server:
+      - Apache/2.2.22 (Linux/SUSE)
+      X-Powered-By:
+      - PHP/5.3.17
+      Content-Length:
+      - '126'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32602,"message":"Invalid params.","data":"Login
+        name or password is incorrect."},"id":47116}'
+    http_version: 
+  recorded_at: Thu, 14 May 2015 16:15:26 GMT
+recorded_with: VCR 2.9.3

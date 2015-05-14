@@ -20,6 +20,15 @@ describe ZabbixMaintenance do
       expect(lzbx).to be_a ZabbixMaintenance
       expect(lzbx.authenticated?).to eq(true)
     end
+
+    context 'password is incorrect', :vcr do
+      it 'raises an exception' do
+        expect do ZabbixMaintenance.new('http://192.168.56.2/zabbix/api_jsonrpc.php',
+                                       'wronglogin',
+                                       'wrongpw')
+              end.to raise_error(/incorrect password/)
+      end
+    end
   end
 
   describe '.create' do
@@ -57,15 +66,6 @@ describe ZabbixMaintenance do
     context 'when authenticated', :vcr do
       subject { zbx.authenticated? }
       it { is_expected.to eq(true) }
-    end
-
-    context 'when not authenticated', :vcr do
-      it 'returns false' do
-        wrong_pw_zbx = ZabbixMaintenance.new('http://192.168.56.2/zabbix/api_jsonrpc.php',
-                                             'wronglogin',
-                                             'wrongpw')
-        expect(wrong_pw_zbx.authenticated?).to eq(false)
-      end
     end
   end
 

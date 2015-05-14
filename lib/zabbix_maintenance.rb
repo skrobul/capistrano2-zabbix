@@ -8,8 +8,12 @@ class ZabbixMaintenance
   def initialize(url, user, password, title: 'capistrano auto maintenance')
     begin
       @zbx = ZabbixApi.connect(url: url, user: user, password: password)
-    rescue RuntimeError
-      @zbx = nil
+    rescue RuntimeError => e
+      if e.message =~ /password is incorrect/
+        fail 'Login failed - incorrect password.'
+      else
+        fail "Error while connecting to Zabbix: #{e}"
+      end
     end
 
     @maint_title = title
