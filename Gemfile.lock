@@ -155,15 +155,15 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0)
   capistrano (~> 2.0)
-  guard
-  guard-rspec
-  guard-rubocop
-  jeweler (~> 2.0.1)
-  pry
+  guard (~> 2.12)
+  guard-rspec (~> 4.5)
+  guard-rubocop (~> 1.2)
+  jeweler (~> 2.0)
+  pry (~> 0.10)
   rdoc (~> 3.12)
-  rspec (~> 3.2.0)
-  simplecov
+  rspec (~> 3.2)
+  simplecov (~> 0.10)
   vcr (~> 2.9)
-  webmock
+  webmock (~> 1.21)
   yard (~> 0.7)
   zabbixapi (~> 2.2)
