@@ -58,6 +58,13 @@ gem:
     after 'deploy:update_code', 'zabbix:create'
     ```
 
+* start/stop maintenances straight from your command line:
+    ```
+    ~/devel/zab-testproject cap zabbix:create
+    * 2015-05-14 17:19:40 executing `zabbix:create'
+    ~/devel/zab-testproject`
+    ```
+
 
 ## Contributing to capistrano2-zabbix
 
