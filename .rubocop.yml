@@ -1,0 +1,8 @@
+AllCops:
+  Exclude:
+    - 'capistrano2-zabbix.gemspec'
+
+Style/FileName:
+  Exclude:
+    - 'spec/capistrano2-zabbix_spec.rb'
+    - 'lib/capistrano2-zabbix.rb'
