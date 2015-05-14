@@ -26,7 +26,8 @@ Then in your `config/deploy.rb` you need to require the gem:
 * `:zabbix_user` - user name that has permissions to edit maintenances
 * `:zabbix_password` - self explanatory
 * `:zabbix_period` - number of seconds that maintance is created for
-* `:zabbix_groupid` - ID of server group included in the maintenace
+* `:zabbix_groupid` - ID of server group included in the maintenace. For
+    example, with default installations `Linux servers` is group number 2.
 * `:zabbix_auto_trigger` - if set to `true`, your deployment will
     automatically execute `zabbix:create` before deploying code and
     `zabbix:delete` when it's finished. If set to `false` (default) you have
@@ -38,7 +39,7 @@ Then in your `config/deploy.rb` you need to require the gem:
   set :zabbix_user,         'Admin'
   set :zabbix_password,     'zabbix'
   set :zabbix_period,       60 * 60 * 10  # 10 hours
-  set :zabbix_groupid,      2
+  set :zabbix_groupid,      2             # Linux servers
   set :zabbix_auto_trigger, false
 ```
 
