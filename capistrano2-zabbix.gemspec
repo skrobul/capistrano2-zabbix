@@ -41,6 +41,7 @@ Gem::Specification.new do |s|
     "spec/cassettes/ZabbixMaintenance/_delete/removes_the_maintenance.yml",
     "spec/cassettes/ZabbixMaintenance/_exists_/when_maintenance_does_not_exist_on_remote_server/.yml",
     "spec/cassettes/ZabbixMaintenance/_exists_/when_maintenance_exists_on_remote_server/.yml",
+    "spec/cassettes/ZabbixMaintenance/_maint_id/when_maintenance_exsts/returns_correct_ID.yml",
     "spec/cassettes/ZabbixMaintenance/_new/authenticates_with_correct_credentials.yml",
     "spec/spec_helper.rb",
     "spec/zabbix_maintenance_spec.rb"
@@ -55,6 +56,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<zabbixapi>, ["~> 2.2"])
+      s.add_runtime_dependency(%q<capistrano>, ["~> 2.0"])
       s.add_development_dependency(%q<rspec>, ["~> 3.2.0"])
       s.add_development_dependency(%q<yard>, ["~> 0.7"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
@@ -69,6 +71,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<guard-rspec>, [">= 0"])
     else
       s.add_dependency(%q<zabbixapi>, ["~> 2.2"])
+      s.add_dependency(%q<capistrano>, ["~> 2.0"])
       s.add_dependency(%q<rspec>, ["~> 3.2.0"])
       s.add_dependency(%q<yard>, ["~> 0.7"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
@@ -84,6 +87,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<zabbixapi>, ["~> 2.2"])
+    s.add_dependency(%q<capistrano>, ["~> 2.0"])
     s.add_dependency(%q<rspec>, ["~> 3.2.0"])
     s.add_dependency(%q<yard>, ["~> 0.7"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
