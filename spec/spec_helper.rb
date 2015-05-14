@@ -21,7 +21,6 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'rspec'
-require 'capistrano2-zabbix'
 require 'vcr'
 
 VCR.configure do |c|

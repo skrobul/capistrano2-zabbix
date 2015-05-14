@@ -25,7 +25,7 @@ Capistrano::Configuration.instance.load do
                                 zabbix_user,
                                 zabbix_password)
     set(:zbx_handle, zbx)
-    zbx.create [zabbix_groupid], period: zabbix_period
+    zbx.create_or_replace [zabbix_groupid], period: zabbix_period
   end
 
   def delete_maintenance
