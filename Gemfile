@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'zabbixapi', '~> 2.2'
+gem 'zabbixapi', ['>=2.2.0', '<2.3.0']
 gem 'capistrano', '~> 2.0'
 
 group :development do
