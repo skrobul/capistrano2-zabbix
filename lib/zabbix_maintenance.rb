@@ -30,7 +30,7 @@ class ZabbixMaintenance
   end
 
   def create_or_replace(*args)
-    delete(maint_id) if exists?
+    delete(id: maint_id) if exists?
     create(*args)
   end
 
