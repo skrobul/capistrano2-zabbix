@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://192.168.56.2/zabbix/api_jsonrpc.php
+    body:
+      encoding: UTF-8
+      string: '{"method":"user.authenticate","params":{"user":"Admin","password":"zabbix"},"auth":null,"id":3374,"jsonrpc":"2.0"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json-rpc
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 May 2015 04:42:50 GMT
+      Server:
+      - Apache/2.2.22 (Linux/SUSE)
+      X-Powered-By:
+      - PHP/5.3.17
+      Content-Length:
+      - '71'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":"0e77b2d8af92d863adf4a492fabaec5f","id":3374}'
+    http_version: 
+  recorded_at: Thu, 14 May 2015 12:14:09 GMT
+- request:
+    method: post
+    uri: http://192.168.56.2/zabbix/api_jsonrpc.php
+    body:
+      encoding: UTF-8
+      string: '{"method":"apiinfo.version","params":{},"auth":"0e77b2d8af92d863adf4a492fabaec5f","id":34489,"jsonrpc":"2.0"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json-rpc
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 May 2015 04:42:50 GMT
+      Server:
+      - Apache/2.2.22 (Linux/SUSE)
+      X-Powered-By:
+      - PHP/5.3.17
+      Content-Length:
+      - '45'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":"2.2.2","id":34489}'
+    http_version: 
+  recorded_at: Thu, 14 May 2015 12:14:10 GMT
+- request:
+    method: post
+    uri: http://192.168.56.2/zabbix/api_jsonrpc.php
+    body:
+      encoding: UTF-8
+      string: '{"method":"maintenance.exists","params":{"name":"capistrano auto maintenance"},"auth":"0e77b2d8af92d863adf4a492fabaec5f","id":11786,"jsonrpc":"2.0"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json-rpc
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 May 2015 04:42:50 GMT
+      Server:
+      - Apache/2.2.22 (Linux/SUSE)
+      X-Powered-By:
+      - PHP/5.3.17
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":false,"id":11786}'
+    http_version: 
+  recorded_at: Thu, 14 May 2015 12:14:10 GMT
+recorded_with: VCR 2.9.3

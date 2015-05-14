@@ -39,4 +39,33 @@ describe ZabbixMaintenance do
       expect { zbx.delete }.to change { zbx.exists? }.from(true).to(false)
     end
   end
+
+  describe '.exists?' do
+    subject { zbx.exists? }
+    context 'when maintenance does not exist on remote server', :vcr do
+      it { is_expected.to eq(false) }
+    end
+    context 'when maintenance exists on remote server', :vcr do
+      it do
+        zbx.create([2])
+        is_expected.to eq(true)
+      end
+    end
+  end
+
+  describe '.authenticated?' do
+    context 'when authenticated', :vcr do
+      subject { zbx.authenticated? }
+      it { is_expected.to eq(true) }
+    end
+
+    context 'when not authenticated', :vcr do
+      it 'returns false' do
+        wrong_pw_zbx = ZabbixMaintenance.new('http://192.168.56.2/zabbix/api_jsonrpc.php',
+                                             'wronglogin',
+                                             'wrongpw')
+        expect(wrong_pw_zbx.authenticated?).to eq(false)
+      end
+    end
+  end
 end

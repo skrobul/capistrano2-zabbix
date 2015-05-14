@@ -6,7 +6,12 @@ class ZabbixMaintenance
   attr_reader :id, :maint_title, :zbx
 
   def initialize(url, user, password, title: 'capistrano auto maintenance')
-    @zbx = ZabbixApi.connect(url: url, user: user, password: password)
+    begin
+      @zbx = ZabbixApi.connect(url: url, user: user, password: password)
+    rescue RuntimeError
+      @zbx = nil
+    end
+
     @maint_title = title
     @id = nil
   end
@@ -36,6 +41,6 @@ class ZabbixMaintenance
   end
 
   def authenticated?
-    ! @zbx.client.auth.nil?
+    !(@zbx.nil? || @zbx.client.auth.nil?)
   end
 end
