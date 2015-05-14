@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'zabbixapi', '~> 2.2'
+gem 'capistrano', '~> 2.0'
+
 group :development do
   gem 'rspec', '~> 3.2.0'
   gem 'yard', '~> 0.7'
