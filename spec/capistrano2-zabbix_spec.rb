@@ -1,7 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require_relative './spec_helper'
 
-describe "Capistrano2Zabbix" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
-  end
+describe 'Capistrano2Zabbix' do
 end
