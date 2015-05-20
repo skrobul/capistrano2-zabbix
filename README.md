@@ -77,6 +77,6 @@ gem:
 * Feel free to submit PR :)
 
 ## License
-[MIT](https://tldrlegal.com/license/mit-license).
+2015 [MIT](https://tldrlegal.com/license/mit-license).
 
 Author: Marek Skrobacki.
