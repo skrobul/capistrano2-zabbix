@@ -22,8 +22,8 @@ class ZabbixMaintenance
 
   def maint_id
     ret = @zbx.query method: 'maintenance.get', params: {
-      'search': {
-        'name': @maint_title
+      'search' => {
+        'name' => @maint_title
       }
     }
     begin
