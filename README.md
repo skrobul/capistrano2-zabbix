@@ -76,8 +76,7 @@ gem:
 * Commit and push until you are happy with your contribution.
 * Feel free to submit PR :)
 
-## Copyright
+## License
+[MIT](https://tldrlegal.com/license/mit-license).
 
-Copyright (c) 2015 Marek Skrobacki. See LICENSE.txt for
-further details.
-
+Author: Marek Skrobacki.
