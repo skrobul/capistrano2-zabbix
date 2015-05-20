@@ -1,5 +1,7 @@
 # capistrano2-zabbix
 
+[![Build Status](https://travis-ci.org/skrobul/capistrano2-zabbix.svg?branch=master)](https://travis-ci.org/skrobul/capistrano2-zabbix)
+
 Tired of manually creating maintenance objects in your Zabbix monitoring
 system for every new release of your application ? This gem is for you! It
 automates creation and removal of necessary objects so that your code can be
