@@ -32,7 +32,7 @@ Then in your `config/deploy.rb` you need to require the gem:
     example, with default installations `Linux servers` is group number 2.
 * `:zabbix_auto_trigger` - if set to `true`, your deployment will
     automatically execute `zabbix:create` before deploying code and
-    `zabbix:delete` when it's finished. If set to `false` (default) you have
+    `zabbix:delete` when it's finished. If set to `false` you have
     to hook those tasks up where you think it's appropriate.
 
 ### Configuration defaults
@@ -42,7 +42,7 @@ Then in your `config/deploy.rb` you need to require the gem:
   set :zabbix_password,     'zabbix'
   set :zabbix_period,       60 * 60 * 10  # 10 hours
   set :zabbix_groupid,      2             # Linux servers
-  set :zabbix_auto_trigger, false
+  set :zabbix_auto_trigger, true
 ```
 
 ## Usage
@@ -57,7 +57,7 @@ gem:
     something like this:
 
     ```ruby
-    set :zabbix_auto_trigger, false         # This is default, can be skipped.
+    set :zabbix_auto_trigger, false
     after 'deploy:update_code', 'zabbix:create'
     ```
 
