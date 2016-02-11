@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Marek Skrobacki"]
-  s.date = "2015-05-26"
+  s.date = "2016-02-11"
   s.description = "\n  Tired of manually creating maintenance objects in your Zabbix monitoring\n  system for every new release of your application ? This gem is for you! It\n  automates creation and removal of necessary objects so that your code can be\n  released without unnecessary false alerts.\n  "
   s.email = "skrobul@skrobul.com"
   s.extra_rdoc_files = [
@@ -57,7 +57,7 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<zabbixapi>, ["< 2.3.0", ">= 2.2.0"])
+      s.add_runtime_dependency(%q<zabbixapi>, ["< 2.5.0", ">= 2.4.0"])
       s.add_runtime_dependency(%q<capistrano>, ["~> 2.0"])
       s.add_development_dependency(%q<rspec>, ["~> 3.2"])
       s.add_development_dependency(%q<yard>, ["~> 0.7"])
@@ -72,7 +72,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<guard>, ["~> 2.12"])
       s.add_development_dependency(%q<guard-rspec>, ["~> 4.5"])
     else
-      s.add_dependency(%q<zabbixapi>, ["< 2.3.0", ">= 2.2.0"])
+      s.add_dependency(%q<zabbixapi>, ["< 2.5.0", ">= 2.4.0"])
       s.add_dependency(%q<capistrano>, ["~> 2.0"])
       s.add_dependency(%q<rspec>, ["~> 3.2"])
       s.add_dependency(%q<yard>, ["~> 0.7"])
@@ -88,7 +88,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<guard-rspec>, ["~> 4.5"])
     end
   else
-    s.add_dependency(%q<zabbixapi>, ["< 2.3.0", ">= 2.2.0"])
+    s.add_dependency(%q<zabbixapi>, ["< 2.5.0", ">= 2.4.0"])
     s.add_dependency(%q<capistrano>, ["~> 2.0"])
     s.add_dependency(%q<rspec>, ["~> 3.2"])
     s.add_dependency(%q<yard>, ["~> 0.7"])
