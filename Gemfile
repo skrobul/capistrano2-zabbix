@@ -12,6 +12,7 @@ group :development do
   gem 'simplecov', '~> 0.10'
   gem 'vcr', '~> 2.9'
   gem 'webmock', '~> 1.21'
+  gem 'crack', '~> 0.3.2'
   gem 'pry', '~> 0.10'
   gem 'guard-rubocop', '~> 1.2'
   gem 'guard', '~> 2.12'
