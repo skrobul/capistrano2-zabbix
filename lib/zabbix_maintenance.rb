@@ -12,7 +12,7 @@ class ZabbixMaintenance
       if e.message =~ /password is incorrect/
         fail 'Login failed - incorrect password.'
       else
-        fail "Error while connecting to Zabbix: #{e}"
+        raise e
       end
     end
 
