@@ -5,6 +5,41 @@ http_interactions:
     uri: http://192.168.56.2/zabbix/api_jsonrpc.php
     body:
       encoding: UTF-8
+      string: '{"method":"apiinfo.version","params":{},"auth":"9cea11e673f8859e7c09085362dc99c1","id":36215,"jsonrpc":"2.0"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json-rpc
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 May 2015 04:45:14 GMT
+      Server:
+      - Apache/2.2.22 (Linux/SUSE)
+      X-Powered-By:
+      - PHP/5.3.17
+      Content-Length:
+      - '45'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","result":"4.0.0","id":36215}'
+    http_version: 
+  recorded_at: Thu, 14 May 2015 12:16:34 GMT
+- request:
+    method: post
+    uri: http://192.168.56.2/zabbix/api_jsonrpc.php
+    body:
+      encoding: UTF-8
       string: '{"method":"user.authenticate","params":{"user":"Admin","password":"zabbix"},"auth":null,"id":90443,"jsonrpc":"2.0"}'
     headers:
       Accept-Encoding:
@@ -33,41 +68,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","result":"9cea11e673f8859e7c09085362dc99c1","id":90443}'
-    http_version: 
-  recorded_at: Thu, 14 May 2015 12:16:34 GMT
-- request:
-    method: post
-    uri: http://192.168.56.2/zabbix/api_jsonrpc.php
-    body:
-      encoding: UTF-8
-      string: '{"method":"apiinfo.version","params":{},"auth":"9cea11e673f8859e7c09085362dc99c1","id":36215,"jsonrpc":"2.0"}'
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-      Content-Type:
-      - application/json-rpc
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 14 May 2015 04:45:14 GMT
-      Server:
-      - Apache/2.2.22 (Linux/SUSE)
-      X-Powered-By:
-      - PHP/5.3.17
-      Content-Length:
-      - '45'
-      Content-Type:
-      - application/json
-    body:
-      encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":"2.2.2","id":36215}'
     http_version: 
   recorded_at: Thu, 14 May 2015 12:16:34 GMT
 - request:
